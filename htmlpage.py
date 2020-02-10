@@ -1,0 +1,1 @@
+url = 'amazon.com/Kangaroo-Cootie-Catcher-Valentines-28-Count/dp/B078J4HKSY?_encoding=UTF8&psc=1'
