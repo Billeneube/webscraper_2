@@ -13,15 +13,15 @@ content=soup.prettify()
 f.write(content)
 
 
-x=f.read()
-if x == soup.prettify():
-  print("the same")
-else:
-  print("not the same")
 
 
 
 score = soup.find('div',attrs={'class': 'zg_rankInfo'})
-print(score)
+link = soup.find('a', attrs={'class' : 'a-link-normal'})
+endlink = link['href']
+fulllink = 'amazon.com'+endlink
+print(link['href'])
+print(fulllink)
+
 f.write(soup.prettify())
 f.close
