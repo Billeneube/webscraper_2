@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+<<<<<<< HEAD
 import urllib.request
 f = open('htmlpage.txt', mode='w+')
 fp = urllib.request.urlopen("https://www.amazon.com/Best-Sellers/zgbs")
@@ -25,3 +26,5 @@ print(fulllink)
 
 f.write(soup.prettify())
 f.close
+=======
+>>>>>>> 4a414c06a1e681a666f598510e2f0b14022b5bb1
