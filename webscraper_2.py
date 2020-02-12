@@ -11,13 +11,7 @@ fp.close()
 
 html_doc=mystr
 soup = BeautifulSoup(html_doc, 'html.parser')
-# content=soup.prettify()
-# f.write(content)
 readLink = url
-
-
-
-
 
 link = soup.find('a', attrs={'class' : 'a-link-normal'})
 endlink = link['href']
