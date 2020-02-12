@@ -1,1 +1,1 @@
-url = 'amazon.com/Kangaroo-Cootie-Catcher-Valentines-28-Count/dp/B078J4HKSY?_encoding=UTF8&psc=1'
+url = 'amazon.com/Fun-Romantic-Game-Couples-Conversation/dp/B0787YN5RM?_encoding=UTF8&psc=1'
