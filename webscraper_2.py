@@ -1,8 +1,15 @@
 from bs4 import BeautifulSoup
-<<<<<<< HEAD
+
+
 import urllib.request
-f = open('htmlpage.txt', mode='w+')
-fp = urllib.request.urlopen("https://www.amazon.com/Best-Sellers/zgbs")
+from htmlpage import url
+urlToScrape = input('URL to open. Press Enter to Default')
+if urlToScrape == "":
+  urlToScrape = 'https://www.amazon.com/Best-Sellers/zgbs'
+f = open('htmlpage.py', mode='w+')
+fp = urllib.request.urlopen(str(urlToScrape))
+
+
 mybytes = fp.read()
 i = False
 mystr = mybytes.decode("utf8")
@@ -10,21 +17,34 @@ fp.close()
 
 html_doc=mystr
 soup = BeautifulSoup(html_doc, 'html.parser')
-content=soup.prettify()
-f.write(content)
+
+readLink = str(url)
 
 
 
-
-
-score = soup.find('div',attrs={'class': 'zg_rankInfo'})
 link = soup.find('a', attrs={'class' : 'a-link-normal'})
 endlink = link['href']
 fulllink = 'amazon.com'+endlink
-print(link['href'])
+# print(link['href'])
 print(fulllink)
+print(readLink)
+if fulllink != readLink.lstrip():
+  print('they are not the same')
+else:
+  print("they are the same")
 
-f.write(soup.prettify())
+
+f.write("url = '" + fulllink + "'")
 f.close
-=======
->>>>>>> 4a414c06a1e681a666f598510e2f0b14022b5bb1
+
+
+fp = urllib.request.urlopen('https://'+str(fulllink))
+mybytes = fp.read()
+i = False
+mystr = mybytes.decode("utf8")
+fp.close()
+
+html_doc=mystr
+soup2 = BeautifulSoup(html_doc, 'html.parser')
+title = soup2.find('span', attrs={'id' : 'productTitle'}).text
+title = str(title)
