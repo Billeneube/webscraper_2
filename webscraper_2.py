@@ -11,7 +11,9 @@ fp.close()
 
 html_doc=mystr
 soup = BeautifulSoup(html_doc, 'html.parser')
+
 readLink = url
+
 
 link = soup.find('a', attrs={'class' : 'a-link-normal'})
 endlink = link['href']
@@ -36,4 +38,7 @@ html_doc=mystr
 soup2 = BeautifulSoup(html_doc, 'html.parser')
 title = soup2.find('span', attrs={'id' : 'productTitle'}).text
 title = str(title)
+
+
 print(title.lstrip().rstrip())
+
