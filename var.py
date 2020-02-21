@@ -1,0 +1,2 @@
+debug = True
+sendMessage=False
