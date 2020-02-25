@@ -1,4 +1,6 @@
+
 from bs4 import BeautifulSoup
+
 from twilio.rest import Client
 import urllib.request
 # from htmlpage import url
@@ -66,6 +68,7 @@ def main():
   print('title ' + title.lstrip().rstrip())
  print(messageBody)
  readLink = fulllink
- time.sleep(7200)
+ time.sleep(10)
  main()
 main()
+
