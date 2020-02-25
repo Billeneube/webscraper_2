@@ -66,6 +66,6 @@ def main():
   print('title ' + title.lstrip().rstrip())
  print(messageBody)
  readLink = fulllink
- time.sleep(7200)
+ time.sleep(60)
  main()
 main()
