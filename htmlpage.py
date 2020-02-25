@@ -28,3 +28,6 @@ url = 'amazon.com/Connect-Strategy-Board-Amazon-Exclusive/dp/B06XY881H4?_encodin
 url = 'amazon.com/Connect-Strategy-Board-Amazon-Exclusive/dp/B06XY881H4?_encoding=UTF8&psc=1'
 url = 'amazon.com/Connect-Strategy-Board-Amazon-Exclusive/dp/B06XY881H4?_encoding=UTF8&psc=1'
 url = 'amazon.com/Connect-Strategy-Board-Amazon-Exclusive/dp/B06XY881H4?_encoding=UTF8&psc=1'
+url = 'amazon.com/Play-Doh-Party-Bag-Dough-Count/dp/B0037710BG?_encoding=UTF8&psc=1'
+url = 'amazon.com/Play-Doh-Party-Bag-Dough-Count/dp/B0037710BG?_encoding=UTF8&psc=1'
+url = 'amazon.com/Play-Doh-Party-Bag-Dough-Count/dp/B0037710BG?_encoding=UTF8&psc=1'
