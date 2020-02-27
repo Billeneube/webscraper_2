@@ -16,28 +16,19 @@ def main():
  messageBody = ""
  sendMessage=False 
  global readLink
- urlToScrape = 'https://www.amazon.com/Best-Sellers/zgbs'
+ urlToScrape = 'https://www.amazon.com/Best-Sellers/zgbs' #amazon top page
  f = open('htmlpage.py', mode='a')
  fp = urllib.request.urlopen(str(urlToScrape))
  mybytes = fp.read()
  i = False
  mystr = mybytes.decode("utf8")
  fp.close()
- 
  html_doc=mystr
- soup = BeautifulSoup(html_doc, 'html.parser')
- 
- 
- 
- 
- 
+ soup = BeautifulSoup(html_doc, 'html.parser') #bsoup code. 
  link = soup.find('a', attrs={'class' : 'a-link-normal'})
  endlink = link['href']
  fulllink = 'amazon.com'+endlink
- # print(link['href'])
- # print(fulllink)
- # print(readLink)
- if fulllink != readLink.lstrip():
+ if fulllink != readLink.lstrip(): #decides what to text
    messageBody = 'The number one toy has changed! '
  else:
    messageBody = "The number one toy is the same! "
@@ -47,12 +38,11 @@ def main():
  i = False
  mystr = mybytes.decode("utf8")
  fp.close()
- 
  html_doc=mystr
  soup2 = BeautifulSoup(html_doc, 'html.parser')
- title = soup2.find('span', attrs={'id' : 'productTitle'}).text
+ title = soup2.find('span', attrs={'id' : 'productTitle'}).text #finds the title of the highest toy
  title = str(title)
- if sendMessage:
+ if sendMessage: #twilio code
   message = client.messages \
                   .create(
                        body="This is the Web-Scraper. " + messageBody + 'The current leader is: '+ title.lstrip().rstrip() +" This can be found here: " + fulllink, 
@@ -60,7 +50,7 @@ def main():
                        to='+19713419489'
                    )
   print(message.sid)
- if debug:
+ if debug: #debug: prints variables. Not important
   print('sendMessage ' + str(sendMessage))
   print('messageBody '+ messageBody)
   print('fulllink '+fulllink)
@@ -68,7 +58,7 @@ def main():
   print('title ' + title.lstrip().rstrip())
  print(messageBody)
  readLink = fulllink
- time.sleep(10)
+ time.sleep(7200)
  main()
 main()
 
